@@ -6,8 +6,6 @@
 
 Kreka is a fast browser, which can run on every Windows PC!
 
-![🍪 Kreka 20.0 on Windows 11 🪟](./screenshots/win11kreka20.png)
-
 ## 🤷 Why Kreka?
 1. Fast browsing.
 2. Made on Tkinter.
