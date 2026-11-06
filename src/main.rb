@@ -1,5 +1,8 @@
 require 'adwaita'
 require 'webkit-gtk'
+require 'yaml'
+
+system('[ -s "~/.progwi0/kreka/config.yaml" ] && vim config.yaml || wget -P ~/.progwi0/kreka/config.yaml https://raw.githubusercontent.com/progwi0/kreka/refs/heads/dev/skel/config.yaml')
 
 app = Gtk::Application.new('org.progwi0.kreka', :flags_none)
 
@@ -11,6 +14,12 @@ app.signal_connect('activate') do |application|
   sw = bld.get_object('sw')
 
   abt = bld.get_object('abt')
+  ab = Gio::SimpleAction.new('ab')
+
+  ab.signal_connect('activate') do
+    abt.present
+    true
+  end
 
   abt.signal_connect('close-request') do
     abt.hide
@@ -25,15 +34,23 @@ app.signal_connect('activate') do |application|
   end
 
   wv = WebKitGtk::WebView.new
+  sttngs = WebKitGtk::Settings.new
+
+  sttngs.enable_javascript = true
+
   wv.hexpand = true
   wv.vexpand = true
 
+  wv.settings = sttngs
+
   sw.set_child(wv)
 
-  wv.load_uri('https://progwi0.pp.ua/kreka')
+  wv.load_uri('https://www.whatismybrowser.com/detect/is-javascript-enabled/')
 
   wn.application = application
   wn.present
+
+  wn.add_action(ab)
 end
 
 exit(app.run([$0] + ARGV))

@@ -1,0 +1,8 @@
+# Default Kreka configuration.
+# 2021-2026 progwi0
+
+pages:
+   home: "https://progwi0.pp.ua/kreka"
+   support: "https://t.me/progwi0?direct"
+browser:
+   js: true

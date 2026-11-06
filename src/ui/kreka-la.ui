@@ -4,7 +4,10 @@
   <!-- interface-name kreka-la.ui -->
   <requires lib="gtk" version="4.24"/>
   <requires lib="libadwaita" version="1.10"/>
+  <requires lib="gio" version="2.0"/>
   <object class="AdwApplicationWindow" id="wn">
+    <property name="default-height">720</property>
+    <property name="default-width">1280</property>
     <child>
       <object class="AdwToolbarView" id="tb">
         <child type="top">
@@ -47,8 +50,25 @@
                   </object>
                 </child>
                 <child>
-                  <object class="GtkButton" id="menu">
+                  <object class="GtkMenuButton" id="menu">
                     <property name="icon-name">open-menu-symbolic</property>
+                    <property name="popover">
+                      <object class="GtkPopoverMenu" id="po">
+                        <property name="menu-model">
+                          <menu id="mn">
+                            <item>
+                              <attribute name="icon">preferences-other</attribute>
+                              <attribute name="label">Preferences</attribute>
+                            </item>
+                            <item>
+                              <attribute name="action">win.ab</attribute>
+                              <attribute name="icon">help-about</attribute>
+                              <attribute name="label">About</attribute>
+                            </item>
+                          </menu>
+                        </property>
+                      </object>
+                    </property>
                   </object>
                 </child>
               </object>
