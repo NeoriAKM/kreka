@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 1.2.0 -->
+<interface>
+  <!-- interface-name kreka-la.ui -->
+  <requires lib="gtk" version="4.24"/>
+  <requires lib="libadwaita" version="1.10"/>
+  <object class="AdwApplicationWindow" id="wn">
+    <child>
+      <object class="AdwToolbarView" id="tb">
+        <child type="top">
+          <object class="AdwHeaderBar" id="hb">
+            <property name="valign">start</property>
+            <child type="title">
+              <object class="GtkSearchEntry" id="sb"/>
+            </child>
+            <child type="start">
+              <object class="GtkBox" id="bx1">
+                <property name="spacing">4</property>
+                <child>
+                  <object class="GtkButton" id="home">
+                    <property name="icon-name">go-home</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="undo">
+                    <property name="icon-name">go-previous</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="redo">
+                    <property name="icon-name">go-next</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child type="end">
+              <object class="GtkBox" id="bx2">
+                <property name="spacing">4</property>
+                <child>
+                  <object class="GtkButton" id="settings">
+                    <property name="icon-name">preferences-other</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="info">
+                    <property name="icon-name">help-about</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="menu">
+                    <property name="icon-name">open-menu-symbolic</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="sw"/>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="AdwAboutWindow" id="abt">
+    <property name="application-icon">kreka26</property>
+    <property name="application-name">Kreka</property>
+    <property name="artists">progwi0
+cacep</property>
+    <property name="comments">A simple browser based on GTK4, written in the most delightful language.</property>
+    <property name="copyright">2021-2026, progwi0</property>
+    <property name="designers">progwi0
+cacep</property>
+    <property name="developer-name">progwi0</property>
+    <property name="developers">progwi0
+cacep</property>
+    <property name="license-type">gpl-3-0</property>
+    <property name="transient-for">wn</property>
+    <property name="version">26.11</property>
+    <property name="website">https://progwi0.pp.ua/kreka</property>
+  </object>
+</interface>

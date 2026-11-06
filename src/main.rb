@@ -1,24 +1,39 @@
-require 'gtk3'
-require 'webkit2-gtk'
+require 'adwaita'
+require 'webkit-gtk'
 
-Gtk.init
+app = Gtk::Application.new('org.progwi0.kreka', :flags_none)
 
-wn = Gtk::Window.new
-wn.set_default_size(1280, 720)
-wn.signal_connect("destroy") { Gtk.main_quit }
+app.signal_connect('activate') do |application|
+  bld = Gtk::Builder.new
+  bld.add_from_file('ui/kreka-la.ui')
 
-hb = Gtk::HeaderBar.new
-hb.show_close_button = true
-hb.title = "Kreka"
-hb.subtitle = "dev"
+  wn = bld.get_object('wn')
+  sw = bld.get_object('sw')
 
-wn.titlebar = hb
+  abt = bld.get_object('abt')
 
-wv = WebKit2Gtk::WebView.new
-wv.load_uri("https://progwi0.pp.ua/")
+  abt.signal_connect('close-request') do
+    abt.hide
+    true
+  end
 
-wn.add(wv)
+  info = bld.get_object('info')
 
-wn.show_all
+  info.signal_connect('clicked') do
+    abt.present
+    true
+  end
 
-Gtk.main
+  wv = WebKitGtk::WebView.new
+  wv.hexpand = true
+  wv.vexpand = true
+
+  sw.set_child(wv)
+
+  wv.load_uri('https://progwi0.pp.ua/kreka')
+
+  wn.application = application
+  wn.present
+end
+
+exit(app.run([$0] + ARGV))
