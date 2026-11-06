@@ -1,26 +1,59 @@
-# 🍪 Kreka
-🍪 Fast cookie.
+---
 
-> [!IMPORTANT]
-> The development of this project is FOR NOW frozen, I will unfreeze it soon.
+<div align="center">
+  <h1>Kreka</h1>
+  <span>🍪 Fast cookie.</span>
 
-Kreka is a fast browser, which can run on every Windows PC!
+  <br />
+  <br />
 
-## 🤷 Why Kreka?
-1. Fast browsing.
-2. Made on Tkinter.
-3. No spy, all is OPEN-SOURCE!
+  <img alt="License" src="https://img.shields.io/badge/License%20-%20GPL%203.0%20-%20%23ffd2b3?labelColor=%23361200">
+  <img alt="Curver" src="https://img.shields.io/badge/Current%20version%20-%2021.0%20-%20%23361200?labelColor=%23ffd2b3">
+  <img alt="Status" src="https://img.shields.io/badge/Status%20-%20Alpha%20-%20%23ffd2b3?labelColor=%23361200">
+</div>
 
-## 🛞 Dependencies!
-For run Kreka (from source or nah) you need:
-- Python 3.12+
-- sv_ttk
-- darkdetect
-- pywinstyles
-- tkinterweb
+---
 
-## 💿 Installation!
+<div align="center">
+  <h3>📄 Overview</h3>
+</div>
 
-You can download Kreka from [releases](https://github.com/progwi0/kreka/releases) or via [Pix](https://github.com/progwi0/pix).
+**Kreka** is a new browser with a simple and pleasant design, built using **GTK4** and **Libadwaita** technologies.
 
-(i tested kreka on win11)
+It’s written in **Ruby**, and if you’d like to help me work on this wonderful project - don’t hesitate!
+
+---
+
+<div align="center">
+  <h3>🛠️ Run</h3>
+</div>
+
+To run **Kreka**, you will need quite a few packages (and gems).
+
+**Gems**:
+
+- adwaita
+- webkit-gtk
+- gtk4
+
+**Packages**:
+
+- ruby
+- rubygems
+- gtk4
+- webkitgtk-6.0
+- libadwaita
+
+---
+
+<div align="center">
+  <h3>🤔 Why Kreka?</h3>
+</div>
+
+**Kreka** might be for you if you’re tired of browsers from big corporations, or if you simply want to try something a bit different.
+
+In other cases, you’ll likely need to look into different browsers. 😔
+
+---
+
+This doc will be updated in the future, as I wrote it in a rush.
