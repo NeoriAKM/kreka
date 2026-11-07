@@ -28,21 +28,15 @@ It’s written in **Ruby**, and if you’d like to help me work on this wonderfu
   <h3>🛠️ Run</h3>
 </div>
 
-To run **Kreka**, you will need quite a few packages (and gems).
+To successfully launch **Kreka**, you will need to download all the necessary dependencies.
 
-**Gems**:
+```bash
+sudo pacman -S ruby rubygems gtk4 webkitgtk-6.0 libadwaita
+```
 
-- adwaita
-- webkit-gtk
-- gtk4
-
-**Packages**:
-
-- ruby
-- rubygems
-- gtk4
-- webkitgtk-6.0
-- libadwaita
+```bash
+gem install gtk4 adwaita webkit-gtk
+```
 
 ---
 
