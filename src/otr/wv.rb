@@ -13,4 +13,10 @@ def wv
   $sw.set_child($wv)
 
   $wv.load_uri($config['pages']['home'])
+
+  $wv.signal_connect('load-changed') do |widget, loadevent|
+    if loadevent == :finished
+      $sb.text = $wv.uri
+    end
+  end
 end

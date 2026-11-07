@@ -28,6 +28,7 @@ rescue Errno::ENOENT => e
       home: "https://progwi0.pp.ua/kreka"
       support: "https://t.me/progwi0?direct"
     browser:
+      sengine: "https://www.google.com/search?q="
       js: true
   YAML
 
@@ -47,7 +48,10 @@ app.signal_connect('activate') do |application|
   ui()
 
   wv()
-  dialogs()
+
+  dlglgc()
+  conlgc()
+  prmptlgc()
 
   consig()
   addacts()
