@@ -35,8 +35,8 @@ rescue Errno::ENOENT => e
   File.write("#{home}/.config/kreka/config.yaml", default_yaml)
   $config = YAML.load_file("#{home}/.config/kreka/config.yaml")
 end
-  
 
+$language = YAML.load_file("#{home}/.config/kreka/translation.yaml")
 
 app = Gtk::Application.new('org.progwi0.kreka', :flags_none)
 
