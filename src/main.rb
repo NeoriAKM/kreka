@@ -67,8 +67,6 @@ app.signal_connect('activate') do |application|
 
   consig()
   addacts()
-
-  p WebKitGtk::ScriptDialog.instance_methods(false).sort
 end
 
 exit(app.run([$0] + ARGV))
