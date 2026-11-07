@@ -98,4 +98,55 @@ cacep</property>
     <property name="version">26.11</property>
     <property name="website">https://progwi0.pp.ua/kreka</property>
   </object>
+  <object class="AdwWindow" id="jswn-def">
+    <property name="icon-name">notification</property>
+    <property name="modal">True</property>
+    <property name="title">Alert.</property>
+    <property name="transient-for">wn</property>
+    <child>
+      <object class="AdwToolbarView" id="jstb-def">
+        <child type="top">
+          <object class="GtkHeaderBar" id="jshb-def">
+            <property name="show-title-buttons">False</property>
+            <property name="title-widget">
+              <object class="GtkLabel" id="jswn-deftitle">
+                <property name="css-classes">heading</property>
+                <property name="hexpand">True</property>
+                <property name="justify">center</property>
+                <property name="label">Alert.</property>
+                <property name="use-markup">True</property>
+                <property name="vexpand">True</property>
+              </object>
+            </property>
+            <property name="valign">start</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="jsbx-def">
+            <property name="margin-bottom">10</property>
+            <property name="margin-end">3</property>
+            <property name="margin-start">3</property>
+            <property name="margin-top">10</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkLabel" id="jsmsg-def">
+                <property name="halign">center</property>
+                <property name="hexpand">True</property>
+                <property name="label">This is alert. Change this message in code.</property>
+                <property name="valign">center</property>
+                <property name="vexpand">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="jsok-def">
+                <property name="halign">center</property>
+                <property name="label">OK</property>
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
 </interface>

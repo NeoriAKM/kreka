@@ -1,56 +1,74 @@
+require_relative 'otr/logic'
+require_relative 'otr/acts'
+
+require_relative 'otr/ui'
+require_relative 'otr/wn'
+require_relative 'otr/wv'
+
+require_relative 'js/dialogs'
+
 require 'adwaita'
 require 'webkit-gtk'
+
 require 'yaml'
+require 'fileutils'
 
-system('[ -s "~/.progwi0/kreka/config.yaml" ] && vim config.yaml || wget -P ~/.progwi0/kreka/config.yaml https://raw.githubusercontent.com/progwi0/kreka/refs/heads/dev/skel/config.yaml')
-
+$config = YAML.load_file("#{`echo ~`.strip}/.progwi0/kreka/config.yaml")
 app = Gtk::Application.new('org.progwi0.kreka', :flags_none)
 
 app.signal_connect('activate') do |application|
-  bld = Gtk::Builder.new
-  bld.add_from_file('ui/kreka-la.ui')
+  $bld = Gtk::Builder.new
+  $bld.add_from_file('ui/kreka-la.ui')
 
-  wn = bld.get_object('wn')
-  sw = bld.get_object('sw')
+  # UI part.
 
-  abt = bld.get_object('abt')
-  ab = Gio::SimpleAction.new('ab')
+  # $wn = bld.get_object('wn')
+  # $sw = bld.get_object('sw')
 
-  ab.signal_connect('activate') do
-    abt.present
-    true
-  end
+  # $abt = bld.get_object('abt')
 
-  abt.signal_connect('close-request') do
-    abt.hide
-    true
-  end
+  # $ab = Gio::SimpleAction.new('ab')
+  # $pr = Gio::SimpleAction.new('pr')
 
-  info = bld.get_object('info')
+  # $settings = bld.get_object('settings')
 
-  info.signal_connect('clicked') do
-    abt.present
-    true
-  end
+  # $info = bld.get_object('info')
 
-  wv = WebKitGtk::WebView.new
-  sttngs = WebKitGtk::Settings.new
+  # Webview part.
 
-  sttngs.enable_javascript = true
+  # $wv = WebKitGtk::WebView.new
+  # sttngs = WebKitGtk::Settings.new
 
-  wv.hexpand = true
-  wv.vexpand = true
+  # sttngs.enable_javascript = true
 
-  wv.settings = sttngs
+  # $wv.hexpand = true
+  # $wv.vexpand = true
 
-  sw.set_child(wv)
+  # $wv.settings = sttngs
 
-  wv.load_uri('https://www.whatismybrowser.com/detect/is-javascript-enabled/')
+  # load "otr/wn.rb"
 
-  wn.application = application
-  wn.present
+  # wn(application)
 
-  wn.add_action(ab)
+  # $wn.application = application
+  # $wn.present
+
+  # JS windows.
+
+  # $jsdef = bld.get_object('jswn-def')
+
+  # Addin logic.
+
+  wn(application)
+  ui()
+
+  wv()
+  dialogs()
+
+  consig()
+  addacts()
+
+  p WebKitGtk::ScriptDialog.instance_methods(false).sort
 end
 
 exit(app.run([$0] + ARGV))
