@@ -7,9 +7,9 @@
   <br />
   <br />
 
-  <img alt="License" src="https://img.shields.io/badge/License%20-%20GPL%203.0%20-%20%23ffd2b3?labelColor=%23361200">
-  <img alt="Curver" src="https://img.shields.io/badge/Current%20version%20-%2021.0%20-%20%23361200?labelColor=%23ffd2b3">
-  <img alt="Status" src="https://img.shields.io/badge/Status%20-%20Alpha%20-%20%23ffd2b3?labelColor=%23361200">
+  <img alt="License" src="https://img.shields.io/badge/License%20-%20GPL%203.0%20-%20brown?style=plastic">
+  <img alt="Curver" src="https://img.shields.io/badge/Current%20version%20-%2021.0%20-%20orange?style=plastic">
+  <img alt="Status" src="https://img.shields.io/badge/Status%20-%20Beta%20-%20beige?style=plastic">
 </div>
 
 ---
