@@ -23,16 +23,21 @@ def ui
   # $wv.load_uri(config['pages']['home'])
 
   $jsdefok = $bld.get_object('jsok-def')
+  $jsdeftitle = $bld.get_object('jswn-deftitle')
   $jsdeftext = $bld.get_object('jsmsg-def')
 
   $jsconok = $bld.get_object('jsok-con')
   $jsconcn = $bld.get_object('jscn-con')
+  $jscontitle = $bld.get_object('jswn-contitle')
   $jscontext = $bld.get_object('jsmsg-con')
 
   $jsprmptok = $bld.get_object('jsok-prmpt')
   $jsprmptcn = $bld.get_object('jscn-prmpt')
+  $jsprmpttitle = $bld.get_object('jswn-prmpttitle')
   $jsprmpttext = $bld.get_object('jsmsg-prmpt')
   $jsprmptentry = $bld.get_object('jsen-prmpt')
+
+  $tst = $bld.get_object('tst')
 
   $sw.set_child($wv)
 end

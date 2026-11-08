@@ -2,7 +2,9 @@
 # 2021-2026 progwi0
 
 pages:
-   home: "https://progwi0.pp.ua/kreka"
-   support: "https://t.me/progwi0?direct"
+  home: "https://progwi0.pp.ua/kreka"
+  support: "https://t.me/progwi0?direct"
 browser:
-   js: true
+  sengine: "https://www.google.com/search?q="
+  js: true
+  language: "en"

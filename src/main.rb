@@ -13,10 +13,10 @@ require 'webkit-gtk'
 require 'yaml'
 require 'fileutils'
 
-home = `echo ~`.strip
+$home = `echo ~`.strip
 
 begin
-  $config = YAML.load_file("#{home}/.config/kreka/config.yaml")
+  $config = YAML.load_file("#{$home}/.config/kreka/config.yaml")
 rescue Psych::SyntaxError => e
   puts "Config is corrupted. Error: #{e.message}"
 rescue Errno::ENOENT => e
@@ -24,19 +24,23 @@ rescue Errno::ENOENT => e
 
   FileUtils.mkdir_p("#{home}/.config/kreka")
   default_yaml = <<~YAML
+    # Default Kreka configuration.
+    # 2021-2026 progwi0
+
     pages:
       home: "https://progwi0.pp.ua/kreka"
       support: "https://t.me/progwi0?direct"
     browser:
       sengine: "https://www.google.com/search?q="
       js: true
+      language: "en"
   YAML
 
   File.write("#{home}/.config/kreka/config.yaml", default_yaml)
   $config = YAML.load_file("#{home}/.config/kreka/config.yaml")
 end
 
-$language = YAML.load_file("#{home}/.config/kreka/translation.yaml")
+require_relative 'otr/translation'
 
 app = Gtk::Application.new('org.progwi0.kreka', :flags_none)
 
@@ -52,6 +56,8 @@ app.signal_connect('activate') do |application|
   dlglgc()
   conlgc()
   prmptlgc()
+
+  translate()
 
   consig()
   addacts()

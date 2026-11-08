@@ -57,6 +57,7 @@
                         <property name="menu-model">
                           <menu id="mn">
                             <item>
+                              <attribute name="action">win.pr</attribute>
                               <attribute name="icon">preferences-other</attribute>
                               <attribute name="label">Preferences</attribute>
                             </item>
@@ -76,28 +77,14 @@
           </object>
         </child>
         <child>
-          <object class="GtkScrolledWindow" id="sw"/>
+          <object class="AdwToastOverlay" id="tst">
+            <child>
+              <object class="GtkScrolledWindow" id="sw"/>
+            </child>
+          </object>
         </child>
       </object>
     </child>
-  </object>
-  <object class="AdwAboutWindow" id="abt">
-    <property name="application-icon">kreka26</property>
-    <property name="application-name">Kreka</property>
-    <property name="artists">progwi0
-cacep</property>
-    <property name="comments">A simple browser based on GTK4, written in the most delightful language.</property>
-    <property name="copyright">2021-2026, progwi0</property>
-    <property name="designers">progwi0</property>
-    <property name="developer-name">progwi0</property>
-    <property name="developers">progwi0
-NeoriAKM</property>
-    <property name="issue-url">https://github.com/progwi0/kreka/issues/</property>
-    <property name="license-type">gpl-3-0</property>
-    <property name="support-url">https://t.me/progwi0?direct</property>
-    <property name="transient-for">wn</property>
-    <property name="version">26.11</property>
-    <property name="website">https://progwi0.pp.ua/kreka</property>
   </object>
   <object class="AdwWindow" id="jswn-def">
     <property name="icon-name">notification</property>
@@ -294,5 +281,23 @@ NeoriAKM</property>
         </child>
       </object>
     </child>
+  </object>
+  <object class="AdwAboutWindow" id="abt">
+    <property name="application-icon">kreka26</property>
+    <property name="application-name">Kreka</property>
+    <property name="copyright">2021-2026 progwi0</property>
+    <property name="designers">progwi0</property>
+    <property name="developer-name">progwi0</property>
+    <property name="developers">progwi0
+NeoriAKM</property>
+    <property name="issue-url">https://github.com/progwi0/kreka/issues/</property>
+    <property name="license-type">gpl-3-0</property>
+    <property name="release-notes">&lt;ul&gt;&lt;li&gt;The application was completely rewritten in Ruby.&lt;/li&gt;&lt;li&gt;A transition to GTK4 and Libadwaita was carried out.&lt;/li&gt;&lt;/ul&gt;</property>
+    <property name="release-notes-version">26.11</property>
+    <property name="support-url">https://t.me/progwi0?direct</property>
+    <property name="title">About.</property>
+    <property name="transient-for">wn</property>
+    <property name="version">26.11</property>
+    <property name="website">https://progwi0.pp.ua/kreka</property>
   </object>
 </interface>

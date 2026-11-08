@@ -1,0 +1,9 @@
+javascript:
+  alert: "Alert."
+  confirm: "Confirm."
+  prompt: "Prompt."
+  cancel: "Cancel"
+  ok: "OK"
+about:
+  name: "Kreka"
+  desc: "A simple browser based on GTK4, written in the most delightful language."
