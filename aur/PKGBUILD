@@ -1,0 +1,26 @@
+pkgname=kreka
+pkgver=26.11
+pkgrel=1
+pkgdesc="A simple browser based on GTK4, written in the most delightful language."
+arch=('x86_64')
+
+url="https://github.com/progwi0/kreka"
+
+license=('GPL-3.0')
+depends=('ruby' 'gtk4' 'webkitgtk-6.0' 'libadwaita' 'git' 'rubygems')
+source=("${pkgname}::git+${url}.git")
+
+sha256sums=('SKIP')
+
+options=('!lto')
+
+package() {
+   mkdir -p "${pkgdir}/opt/${pkgname}"
+
+   cp -r "${srcdir}/${pkgname}"/* "${pkgdir}/opt/${pkgname}"
+   chmod +x "${pkgdir}/opt/${pkgname}/src/main.rb"
+
+   mkdir -p "${pkgdir}/usr/bin"
+
+   ln -s "/opt/${pkgname}/src/main.rb" "${pkgdir}/usr/bin/${pkgname}"
+}

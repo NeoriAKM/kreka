@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require_relative 'otr/logic'
 require_relative 'otr/acts'
 
@@ -13,10 +15,12 @@ require 'webkit-gtk'
 require 'yaml'
 require 'fileutils'
 
-$home = `echo ~`.strip
+Dir.chdir(File.dirname(__FILE__))
+
+home = Dir.home
 
 begin
-  $config = YAML.load_file("#{$home}/.config/kreka/config.yaml")
+  $config = YAML.load_file("#{home}/.config/kreka/config.yaml")
 rescue Psych::SyntaxError => e
   puts "Config is corrupted. Error: #{e.message}"
 rescue Errno::ENOENT => e
@@ -46,7 +50,7 @@ app = Gtk::Application.new('org.progwi0.kreka', :flags_none)
 
 app.signal_connect('activate') do |application|
   $bld = Gtk::Builder.new
-  $bld.add_from_file('ui/kreka-la.ui')
+  $bld.add_from_file("./ui/kreka-la.ui")
 
   wn(application)
   ui()

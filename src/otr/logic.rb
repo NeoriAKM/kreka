@@ -16,7 +16,7 @@ def consig
   end
 
   $pr.signal_connect('activate') do
-    if File.exist?("#{`echo ~`.strip}/.config/kreka/config.yaml")
+    if File.exist?("#{Dir.home}/.config/kreka/config.yaml")
       system("kgx --title='Kreka Configuration edit' --command='vim #{`echo ~`.strip}/.config/kreka/config.yaml'")
     else
       puts "Sorry."
@@ -25,7 +25,7 @@ def consig
   end
 
   $settings.signal_connect('clicked') do
-    if File.exist?("#{`echo ~`.strip}/.config/kreka/config.yaml")
+    if File.exist?("#{Dir.home}/.config/kreka/config.yaml")
       system("kgx --title='Kreka Configuration edit' --command='vim #{`echo ~`.strip}/.config/kreka/config.yaml'")
     else
       puts "Sorry."

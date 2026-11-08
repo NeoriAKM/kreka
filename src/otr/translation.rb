@@ -3,10 +3,10 @@ require_relative './ui'
 require 'yaml'
 require 'fileutils'
 
-$home = `echo ~`.strip
+home = Home.dir
 
 begin
-  puts "#{$home}/.config/kreka/translations#{$config['browser']['language']}/translation.yaml"
+  puts "#{home}/.config/kreka/translations/#{$config['browser']['language']}/translation.yaml"
   $language = YAML.load_file("#{$home}/.config/kreka/translations/#{$config['browser']['language']}/translation.yaml")
 rescue Errno::ENOENT => e
   puts "WARNING: moving translation files to ~/.config...\n"
