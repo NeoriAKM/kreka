@@ -285,11 +285,13 @@
   <object class="AdwAboutWindow" id="abt">
     <property name="application-icon">kreka26</property>
     <property name="application-name">Kreka</property>
+    <property name="comments">A simple browser based on GTK4, written in the most delightful language.</property>
     <property name="copyright">2021-2026 progwi0</property>
     <property name="designers">progwi0</property>
     <property name="developer-name">progwi0</property>
     <property name="developers">progwi0
 NeoriAKM</property>
+    <property name="gravity">center</property>
     <property name="issue-url">https://github.com/progwi0/kreka/issues/</property>
     <property name="license-type">gpl-3-0</property>
     <property name="release-notes">&lt;ul&gt;&lt;li&gt;The application was completely rewritten in Ruby.&lt;/li&gt;&lt;li&gt;A transition to GTK4 and Libadwaita was carried out.&lt;/li&gt;&lt;/ul&gt;</property>
