@@ -15,6 +15,8 @@ require 'webkit-gtk'
 require 'yaml'
 require 'fileutils'
 
+Dir.chdir(File.dirname(__FILE__))
+
 $home = `echo ~`.strip
 
 begin
