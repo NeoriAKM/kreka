@@ -50,7 +50,7 @@ app = Gtk::Application.new('org.progwi0.kreka', :flags_none)
 
 app.signal_connect('activate') do |application|
   $bld = Gtk::Builder.new
-  $bld.add_from_file("./ui/kreka-la.ui")
+  $bld.add_from_file(File.expand_path("ui/kreka-la.ui", __dir__))
 
   wn(application)
   ui()

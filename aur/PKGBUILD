@@ -23,4 +23,21 @@ package() {
    mkdir -p "${pkgdir}/usr/bin"
 
    ln -s "/opt/${pkgname}/src/main.rb" "${pkgdir}/usr/bin/${pkgname}"
+
+   mkdir -p "${pkgdir}/usr/share/icons/hicolor/scalable/apps"
+   cp -r "${srcdir}/${pkgname}/icons"/* "${pkgdir}/usr/share/icons/hicolor/scalable/apps"
+
+   mkdir -p "${pkgdir}/usr/share/applications"
+
+   cat <<EOF > "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+[Desktop Entry]
+Version=26.11
+Name=Kreka
+Comment=A simple browser based on GTK4, written in the most delightful language.
+Exec=/usr/bin/kreka
+Icon=kreka26
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;
+EOF
 }
