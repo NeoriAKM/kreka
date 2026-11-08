@@ -2,7 +2,7 @@ require_relative './wn'
 require_relative './ui'
 require 'yaml'
 
-$language = YAML.load_file("#{$home}/.config/kreka/#{$config['browser']['language']}/translation.yaml")
+$language = YAML.load_file("#{Dir.home}/.config/kreka/#{$config['browser']['language']}/translation.yaml")
 
 def translate
   $abt.application_name = $language['about']['name']
