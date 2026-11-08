@@ -3,7 +3,7 @@ require_relative './ui'
 require 'yaml'
 require 'fileutils'
 
-home = Home.dir
+home = Dir.home
 
 begin
   puts "#{home}/.config/kreka/translations/#{$config['browser']['language']}/translation.yaml"
