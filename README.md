@@ -1,5 +1,3 @@
----
-
 <div align="center">
   <h1>Kreka</h1>
   <span>🍪 Fast cookie.</span>
