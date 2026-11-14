@@ -74,6 +74,14 @@
                 </child>
               </object>
             </child>
+            <child>
+              <object class="GtkLabel" id="ttl">
+                <property name="css-classes">heading</property>
+                <property name="halign">center</property>
+                <property name="label">Kreka</property>
+                <property name="valign">center</property>
+              </object>
+            </child>
           </object>
         </child>
         <child>
@@ -283,7 +291,7 @@
     </child>
   </object>
   <object class="AdwAboutWindow" id="abt">
-    <property name="application-icon">kreka26</property>
+    <property name="application-icon">kreka</property>
     <property name="application-name">Kreka</property>
     <property name="comments">A simple browser based on GTK4, written in the most delightful language.</property>
     <property name="copyright">2021-2026 progwi0</property>
@@ -294,7 +302,7 @@ NeoriAKM</property>
     <property name="gravity">center</property>
     <property name="issue-url">https://github.com/progwi0/kreka/issues/</property>
     <property name="license-type">gpl-3-0</property>
-    <property name="release-notes">&lt;ul&gt;&lt;li&gt;The application was completely rewritten in Ruby.&lt;/li&gt;&lt;li&gt;A transition to GTK4 and Libadwaita was carried out.&lt;/li&gt;&lt;/ul&gt;</property>
+    <property name="release-notes">&lt;ul&gt;&lt;li&gt;The application was completely rewritten in Ruby.&lt;/li&gt;&lt;li&gt;A transition to GTK4 and Libadwaita was carried out.&lt;/li&gt;&lt;li&gt;Something similar to extensions has been implemented.&lt;/li&gt;&lt;li&gt;Added theme support.&lt;/li&gt;&lt;/ul&gt;</property>
     <property name="release-notes-version">26.11</property>
     <property name="support-url">https://t.me/progwi0?direct</property>
     <property name="title">About.</property>

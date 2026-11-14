@@ -1,6 +1,6 @@
-require_relative '../otr/wn'
-require_relative '../otr/wv'
-require_relative '../otr/ui'
+require_relative '../gui/wn'
+require_relative '../gui/wv'
+require_relative '../gui/ui'
 
 def dlglgc
   $wv.signal_connect('script-dialog') do |_, dialog|

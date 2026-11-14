@@ -3,9 +3,11 @@
 require_relative 'otr/logic'
 require_relative 'otr/acts'
 
-require_relative 'otr/ui'
-require_relative 'otr/wn'
-require_relative 'otr/wv'
+require_relative 'gui/ui'
+require_relative 'gui/wn'
+require_relative 'gui/wv'
+
+require_relative 'ext/api'
 
 require_relative 'js/dialogs'
 
@@ -38,19 +40,25 @@ rescue Errno::ENOENT => e
       sengine: "https://www.google.com/search?q="
       js: true
       language: "en"
+    theme:
+      scheme: "light"
+      theme: "none"
   YAML
 
   File.write("#{home}/.config/kreka/config.yaml", default_yaml)
   $config = YAML.load_file("#{home}/.config/kreka/config.yaml")
 end
 
-require_relative 'otr/translation'
+require_relative './translation'
 
 app = Gtk::Application.new('org.progwi0.kreka', :flags_none)
 
 app.signal_connect('activate') do |application|
   $bld = Gtk::Builder.new
   $bld.add_from_file(File.expand_path("ui/kreka-la.ui", __dir__))
+
+  load('theming/scheme.rb')
+  load('theming/theming.rb')
 
   wn(application)
   ui()
@@ -65,6 +73,8 @@ app.signal_connect('activate') do |application|
 
   consig()
   addacts()
+
+  load('ext/loader.rb')
 end
 
 exit(app.run([$0] + ARGV))

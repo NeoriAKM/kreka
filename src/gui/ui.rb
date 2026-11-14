@@ -8,6 +8,10 @@ def ui
   $undo = $bld.get_object('undo')
   $redo = $bld.get_object('redo')
 
+  $hb = $bld.get_object('hb')
+  $bx1 = $bld.get_object('bx1')
+  $bx2 = $bld.get_object('bx2')
+
   $sb = $bld.get_object('sb')
 
   # $wv = WebKitGtk::WebView.new
@@ -38,6 +42,8 @@ def ui
   $jsprmptentry = $bld.get_object('jsen-prmpt')
 
   $tst = $bld.get_object('tst')
+
+  $ttl = $bld.get_object('ttl')
 
   $sw.set_child($wv)
 end

@@ -1,5 +1,5 @@
-require_relative './wn'
-require_relative './ui'
+require_relative './gui/wn'
+require_relative './gui/ui'
 require 'yaml'
 require 'fileutils'
 
