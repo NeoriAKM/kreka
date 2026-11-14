@@ -61,4 +61,8 @@ module KrekaExt
     win.transient_for = $wn
     win.present
   end
+
+  def self.loadDep(file)
+    load("#{Dir.home}/.progwi0/kreka/ext/#{file}")
+  end
 end
