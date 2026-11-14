@@ -3,7 +3,7 @@
 <interface>
   <!-- interface-name kreka-la.ui -->
   <requires lib="gio" version="2.0"/>
-  <requires lib="gtk" version="4.24"/>
+  <requires lib="gtk" version="4.22"/>
   <requires lib="libadwaita" version="1.10"/>
   <object class="AdwApplicationWindow" id="wn">
     <property name="default-height">720</property>
