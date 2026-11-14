@@ -11,7 +11,7 @@ module KrekaExt
       if block_given?
         yield
       else
-        puts '...'
+        ::Kernel.puts '...'
       end
     end
 
@@ -50,10 +50,10 @@ module KrekaExt
     wv.signal_connect('load-changed') do |widget, loadevent|
       if loadevent == :finished
         if widget.title.nil?
-          erpth = File.expand_path('../web/error.html', __dir__)
+          erpth = ::File.expand_path('../web/error.html', __dir__)
           widget.load_uri("file://#{erpth}")
         else
-          puts 'nothing.'
+          ::Kernel.puts 'nothing.'
         end
       end
     end

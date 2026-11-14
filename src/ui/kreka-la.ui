@@ -87,7 +87,10 @@
         <child>
           <object class="AdwToastOverlay" id="tst">
             <child>
-              <object class="GtkScrolledWindow" id="sw"/>
+              <object class="GtkScrolledWindow" id="sw">
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+              </object>
             </child>
           </object>
         </child>
