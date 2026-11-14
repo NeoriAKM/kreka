@@ -8,3 +8,6 @@ browser:
   sengine: "https://www.google.com/search?q="
   js: true
   language: "en"
+theme:
+  scheme: "light"
+  theme: "none"
