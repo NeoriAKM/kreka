@@ -5,3 +5,5 @@ source "https://rubygems.org"
 gem "adwaita"
 gem "gtk4"
 gem "webkit-gtk"
+
+gem "rubocop"
