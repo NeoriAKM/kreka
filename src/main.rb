@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require_relative 'otr/logic'
 require_relative 'otr/acts'
@@ -25,8 +26,8 @@ begin
   $config = YAML.load_file("#{home}/.config/kreka/config.yaml")
 rescue Psych::SyntaxError => e
   puts "Config is corrupted. Error: #{e.message}"
-rescue Errno::ENOENT => e
-  puts "Config is not found. Making default..."
+rescue Errno::ENOENT
+  puts 'Config is not found. Making default...'
 
   FileUtils.mkdir_p("#{home}/.config/kreka")
   default_yaml = <<~YAML
@@ -55,26 +56,26 @@ app = Gtk::Application.new('org.progwi0.kreka', :flags_none)
 
 app.signal_connect('activate') do |application|
   $bld = Gtk::Builder.new
-  $bld.add_from_file(File.expand_path("ui/kreka-la.ui", __dir__))
+  $bld.add_from_file(File.expand_path('ui/kreka-la.ui', __dir__))
 
   load('theming/scheme.rb')
   load('theming/theming.rb')
 
   wn(application)
-  ui()
+  ui
 
-  wv()
+  wv
 
-  dlglgc()
-  conlgc()
-  prmptlgc()
+  dlglgc
+  conlgc
+  prmptlgc
 
-  translate()
+  translate
 
-  consig()
-  addacts()
+  consig
+  addacts
 
   load('ext/loader.rb')
 end
 
-exit(app.run([$0] + ARGV))
+exit(app.run([$PROGRAM_NAME] + ARGV))

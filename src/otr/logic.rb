@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../gui/wn'
 require_relative '../gui/ui'
 
@@ -19,7 +21,7 @@ def consig
     if File.exist?("#{Dir.home}/.config/kreka/config.yaml")
       system("kgx --title='Kreka Configuration edit' --command='vim #{`echo ~`.strip}/.config/kreka/config.yaml'")
     else
-      puts "Sorry."
+      puts 'Sorry.'
     end
     true
   end
@@ -28,7 +30,7 @@ def consig
     if File.exist?("#{Dir.home}/.config/kreka/config.yaml")
       system("kgx --title='Kreka Configuration edit' --command='vim #{`echo ~`.strip}/.config/kreka/config.yaml'")
     else
-      puts "Sorry."
+      puts 'Sorry.'
     end
   end
 
@@ -54,4 +56,3 @@ def consig
     $wv.load_uri($config['pages']['home'])
   end
 end
-

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def wn(application)
   $wn = $bld.get_object('wn')
   $abt = $bld.get_object('abt')

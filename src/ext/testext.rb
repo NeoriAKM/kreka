@@ -1,5 +1,7 @@
-require_relative "../copies/api"
+# frozen_string_literal: true
+
+require_relative '../copies/api'
 
 KrekaExt.addButton('preferences', 'right') do
-    KrekaExt.newWindow('Test.', 'https://example.com/')
+  KrekaExt.newWindow('Test.', 'https://example.com/')
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative './gui/wn'
 require_relative './gui/ui'
 require 'yaml'
@@ -8,14 +10,14 @@ home = Dir.home
 begin
   puts "#{home}/.config/kreka/translations/#{$config['browser']['language']}/translation.yaml"
   $language = YAML.load_file("#{home}/.config/kreka/translations/#{$config['browser']['language']}/translation.yaml")
-rescue Errno::ENOENT => e
+rescue Errno::ENOENT
   puts "WARNING: moving translation files to ~/.config...\n"
 
   FileUtils.mkdir_p("#{home}/.config/kreka")
-  FileUtils.cp_r("../translations", "#{home}/.config/kreka/")
+  FileUtils.cp_r('../translations', "#{home}/.config/kreka/")
 
-  puts "-------------------------------------------"
-  puts "Success! Rerun Kreka now"
+  puts '-------------------------------------------'
+  puts 'Success! Rerun Kreka now'
   exit 0
 rescue Psych::SyntaxError => e
   puts "Syntax problem. Error: #{e.message}"

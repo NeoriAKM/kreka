@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../gui/wn'
 require_relative '../gui/wv'
 require_relative '../gui/ui'
@@ -60,7 +62,7 @@ def prmptlgc
     next false unless dialog.dialog_type == :prompt
 
     $jsprmpttext.label = dialog.message
-    $jsprmptentry.text = dialog.prompt_get_default_text || ""
+    $jsprmptentry.text = dialog.prompt_get_default_text || ''
 
     $jsprmptok.signal_connect('clicked') do
       dialog.prompt_set_text($jsprmptentry.text)

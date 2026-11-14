@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative './ui'
 
 def wv
@@ -38,7 +40,6 @@ def wv
   #     true
   #   end
   # end
-
 
   # $wv.signal_connect('resource-load-started') do |wg, rs, rq|
   #   puts rs.class

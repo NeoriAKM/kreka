@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gtk4'
 require 'webkit-gtk'
 
@@ -36,4 +38,4 @@ app.signal_connect('activate') do |application|
   wn.present
 end
 
-exit(app.run([$0] + ARGV))
+exit(app.run([$PROGRAM_NAME] + ARGV))
