@@ -63,6 +63,6 @@ module KrekaExt
   end
 
   def self.loadDep(file)
-    load("#{Dir.home}/.progwi0/kreka/ext/#{file}")
+    ::Kernel.load("#{Dir.home}/.progwi0/kreka/ext/#{file}")
   end
 end
