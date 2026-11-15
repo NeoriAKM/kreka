@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative 'otr/logic'
-require_relative 'otr/acts'
+require_relative 'gui/acts'
 
 require_relative 'gui/ui'
 require_relative 'gui/wn'
@@ -61,21 +60,27 @@ app.signal_connect('activate') do |application|
   load('theming/scheme.rb')
   load('theming/theming.rb')
 
-  wn(application)
-  ui
+  Window.wn(application)
+  GUI.ui
 
-  wv
+  WebView.ld
 
-  dlglgc
-  conlgc
-  prmptlgc
+  if ARGV[0]
+    $wv.load_uri(ARGV[0])
+  else
+    $wv.load_uri($config['pages']['home'])
+  end
+
+  JSAlerts.dialogLogic
+  JSAlerts.confirmLogic
+  JSAlerts.promptLogic
 
   translate
 
-  consig
-  addacts
+  Actions.logic
+  Actions.add
 
   load('ext/loader.rb')
 end
 
-exit(app.run([$PROGRAM_NAME] + ARGV))
+exit(app.run([$PROGRAM_NAME]))

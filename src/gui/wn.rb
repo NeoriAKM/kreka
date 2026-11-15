@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
-def wn(application)
-  $wn = $bld.get_object('wn')
-  $abt = $bld.get_object('abt')
+module Window
+  def self.wn(application)
+    $wn = $bld.get_object('wn')
+    $abt = $bld.get_object('abt')
 
-  $jsdef = $bld.get_object('jswn-def')
-  $jscon = $bld.get_object('jswn-con')
-  $jsprmpt = $bld.get_object('jswn-prmpt')
+    $jsdef = $bld.get_object('jswn-def')
+    $jscon = $bld.get_object('jswn-con')
+    $jsprmpt = $bld.get_object('jswn-prmpt')
 
-  $wn.application = application
-  $wn.present
+    $wn.application = application
+    $wn.present
+  end
 end
